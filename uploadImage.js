@@ -1,6 +1,5 @@
 const path = require("path");
 const multer = require("multer");
-const ApiError = require("../utils/apiError");
 
 const MulterProps = () => {
   //////////////////////////////////////////////////////
