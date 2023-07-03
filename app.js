@@ -119,19 +119,6 @@ app.get("/admin/order-status", [isAdmin], changeStatusOfOrder);
 app.get("/admin/users", [isAdmin], getAllUsers);
 
 // HELPER
-app.post(
-  "/photos/upload",
-  uploadSingleImage("image"),
-  async function (req, res, next) {
-    try {
-      const result = await cloudinary.uploader.upload(req.file.path);
-      req.body.image = result.url;
-      next();
-    } catch (error) {
-      return res.send(error.message);
-    }
-  }
-);
 
 app.listen(process.env.PORT || 8081, () => {
   console.log(`Example app listening on port ${process.env.PORT}!`);
